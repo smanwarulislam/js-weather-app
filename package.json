@@ -1,10 +1,14 @@
 {
   "name": "js-weather-app",
+  "homepage": "https://smanwarulislam.github.io/js-weather-app",
   "version": "1.0.0",
   "description": "Weather App",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build": "mkdir build && cp public/index.html build/ && cp public/style.css build/ && cp public/app.js build/ && cp public/openweather.png build/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "S M Anwarul Islam",
@@ -16,6 +20,7 @@
     "mongoose": "^6.8.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "nodemon": "^2.0.20"
   },
   "engines": {
